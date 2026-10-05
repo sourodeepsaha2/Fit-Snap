@@ -1,32 +1,69 @@
-# React + TypeScript + Vite
+# 📸 FitSnap — AI-Powered Fitness & Nutrition Tracker
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+FitSnap is a modern, full-stack monorepo application designed for seamless nutrition tracking, meal logging via AI vision, workout management, and body weight trend analytics.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## ✨ Features
 
-## React Compiler
+- 📸 **AI Meal Photo Scanner**: Upload or capture photos of meals for automatic food identification, portion estimation, and macro calculation via Gemini AI Vision.
+- 🎯 **Interactive Calorie & Macro Rings**: Real-time daily calorie progress visualization, macro split (Protein, Carbs, Fat), and meal log summaries.
+- 🏋️ **Workout Tracker**: Track strength training sets, reps, weight, and cardio exercise burn metrics.
+- 📈 **Weight & Body Metrics Analytics**: Interactive weight journey trends (7d, 30d, 90d) with goal projections.
+- 🌙 **Dark Mode & Responsive Mobile Shell**: Native app-like aesthetic optimized for desktop and mobile viewports.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the Oxlint configuration
+## 🛠️ Architecture & Tech Stack
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
-
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+```
+FitSnap Monorepo
+├── frontend/               # React 19 + TypeScript + Vite + TailwindCSS
+│   ├── src/components/     # Reusable design primitives, modals, & feature cards
+│   ├── src/pages/          # Dashboard, Meals, Workouts, Progress, Settings
+│   └── src/services/       # API integration & meal scanner service
+└── backend/                # Node.js + Express + TypeScript
+    ├── src/controllers/    # Meal analysis endpoints
+    ├── src/services/ai/    # Gemini AI Vision service with fallbacks
+    └── src/routes/         # Express API routes
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+- **Frontend**: React 19, TypeScript, Vite, TailwindCSS, Recharts, Lucide Icons
+- **Backend**: Express, Node.js, TypeScript, Multer, `@google/genai`
+- **Monorepo Management**: npm Workspaces
+
+---
+
+## 🚀 Quick Start
+
+### 1. Install Dependencies
+```bash
+npm install
+```
+
+### 2. Configure Environment Variables
+Copy `.env.example` in `backend/`:
+```bash
+cp backend/.env.example backend/.env
+```
+
+### 3. Run Development Servers
+```bash
+npm run dev:frontend    # Starts Vite dev server (http://localhost:5173)
+npm run dev:backend     # Starts Express backend (http://localhost:5001)
+```
+
+---
+
+## 📦 Production Build
+
+```bash
+npm run build
+```
+Generates production dist bundles for both `frontend` and `backend`.
+
+---
+
+## 📄 License
+MIT License.
+
