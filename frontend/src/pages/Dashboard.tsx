@@ -4,6 +4,7 @@ import { CalorieRing } from '../components/dashboard/CalorieRing';
 import { MacroCard } from '../components/dashboard/MacroCard';
 import { TodayMealsSummary } from '../components/dashboard/TodayMealsSummary';
 import { TodayActivityCard } from '../components/dashboard/TodayActivityCard';
+import { WaterTrackerCard } from '../components/dashboard/WaterTrackerCard';
 import { WeightSummaryCard } from '../components/dashboard/WeightSummaryCard';
 import { WeeklyCalorieChart } from '../components/dashboard/WeeklyCalorieChart';
 import { WeightTrendPreview } from '../components/dashboard/WeightTrendPreview';
@@ -74,6 +75,9 @@ export const Dashboard: React.FC = () => {
 
       {/* Today's Activity */}
       <TodayActivityCard activity={mockTodayActivity} />
+
+      {/* Water Intake Tracker */}
+      <WaterTrackerCard initialIntakeMl={1500} targetMl={2500} />
 
       {/* Weight Summary */}
       <WeightSummaryCard

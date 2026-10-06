@@ -3,6 +3,7 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import mealRoutes from './routes/mealRoutes.js';
 import workoutRoutes from './routes/workoutRoutes.js';
+import waterRoutes from './routes/waterRoutes.js';
 import { errorHandler } from './middleware/errorHandler.js';
 
 dotenv.config();
@@ -29,6 +30,7 @@ app.get('/health', (_req, res) => {
 // API Routes
 app.use('/api/meals', mealRoutes);
 app.use('/api/workouts', workoutRoutes);
+app.use('/api/water', waterRoutes);
 
 // Global Error Handler
 app.use(errorHandler);
