@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import { User, Moon, ShieldCheck, Zap, Save } from 'lucide-react';
+import { User, Moon, ShieldCheck, Zap, Save, Download } from 'lucide-react';
 import { Button } from '../components/common/Button';
 import { Toast } from '../components/common/Toast';
+import { ExportModal } from '../components/common/ExportModal';
 import { mockUserProfile, mockUserPreferences } from '../data/mockData';
 import type { UserProfile, UserPreferences } from '../types';
 
@@ -9,6 +10,7 @@ export const Settings: React.FC = () => {
   const [profile, setProfile] = useState<UserProfile>(mockUserProfile);
   const [preferences, setPreferences] = useState<UserPreferences>(mockUserPreferences);
   const [toastMessage, setToastMessage] = useState<string | null>(null);
+  const [isExportOpen, setIsExportOpen] = useState(false);
 
   const handleProfileChange = (field: keyof UserProfile, value: number) => {
     setProfile((prev) => ({ ...prev, [field]: value }));
@@ -165,6 +167,29 @@ export const Settings: React.FC = () => {
           </div>
         </div>
 
+        {/* Data Management & Export Section */}
+        <div className="bg-zinc-900/90 border border-zinc-800 rounded-3xl p-5 shadow-sm space-y-3">
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-3">
+              <div className="p-2.5 bg-yellow-400/10 text-yellow-400 rounded-xl border border-yellow-400/20">
+                <Download className="w-5 h-5" />
+              </div>
+              <div>
+                <h3 className="text-base font-bold text-white">Data Export</h3>
+                <p className="text-xs text-zinc-400">Backup your logs & reports</p>
+              </div>
+            </div>
+            <Button
+              type="button"
+              variant="outline"
+              size="sm"
+              onClick={() => setIsExportOpen(true)}
+            >
+              Export
+            </Button>
+          </div>
+        </div>
+
         {/* Save Button */}
         <Button
           type="submit"
@@ -176,6 +201,12 @@ export const Settings: React.FC = () => {
           Save Preferences
         </Button>
       </form>
+
+      {/* Export Modal */}
+      <ExportModal
+        isOpen={isExportOpen}
+        onClose={() => setIsExportOpen(false)}
+      />
 
       {/* About Section */}
       <div className="bg-zinc-900/50 border border-zinc-800/80 rounded-3xl p-5 text-center space-y-2">
