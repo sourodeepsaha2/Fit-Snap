@@ -8,6 +8,7 @@ import { WaterTrackerCard } from '../components/dashboard/WaterTrackerCard';
 import { StreakGamificationCard } from '../components/dashboard/StreakGamificationCard';
 import { FitnessGoalsCard } from '../components/dashboard/FitnessGoalsCard';
 import { SmartNudgeCard } from '../components/dashboard/SmartNudgeCard';
+import { SleepRecoveryCard } from '../components/dashboard/SleepRecoveryCard';
 import { AIHealthInsightsCard } from '../components/dashboard/AIHealthInsightsCard';
 import { WeightSummaryCard } from '../components/dashboard/WeightSummaryCard';
 import { WeeklyCalorieChart } from '../components/dashboard/WeeklyCalorieChart';
@@ -91,6 +92,9 @@ export const Dashboard: React.FC = () => {
 
       {/* Fitness Goals */}
       <FitnessGoalsCard />
+
+      {/* Sleep & Body Recovery */}
+      <SleepRecoveryCard />
 
       {/* AI Health Insights */}
       <AIHealthInsightsCard />
