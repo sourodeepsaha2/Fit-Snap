@@ -6,6 +6,7 @@ import workoutRoutes from './routes/workoutRoutes.js';
 import waterRoutes from './routes/waterRoutes.js';
 import exportRoutes from './routes/exportRoutes.js';
 import insightRoutes from './routes/insightRoutes.js';
+import streakRoutes from './routes/streakRoutes.js';
 import { errorHandler } from './middleware/errorHandler.js';
 
 dotenv.config();
@@ -35,6 +36,7 @@ app.use('/api/workouts', workoutRoutes);
 app.use('/api/water', waterRoutes);
 app.use('/api/export', exportRoutes);
 app.use('/api/insights', insightRoutes);
+app.use('/api/streak', streakRoutes);
 
 // Global Error Handler
 app.use(errorHandler);

@@ -5,6 +5,7 @@ import { MacroCard } from '../components/dashboard/MacroCard';
 import { TodayMealsSummary } from '../components/dashboard/TodayMealsSummary';
 import { TodayActivityCard } from '../components/dashboard/TodayActivityCard';
 import { WaterTrackerCard } from '../components/dashboard/WaterTrackerCard';
+import { StreakGamificationCard } from '../components/dashboard/StreakGamificationCard';
 import { AIHealthInsightsCard } from '../components/dashboard/AIHealthInsightsCard';
 import { WeightSummaryCard } from '../components/dashboard/WeightSummaryCard';
 import { WeeklyCalorieChart } from '../components/dashboard/WeeklyCalorieChart';
@@ -79,6 +80,9 @@ export const Dashboard: React.FC = () => {
 
       {/* Water Intake Tracker */}
       <WaterTrackerCard initialIntakeMl={1500} targetMl={2500} />
+
+      {/* Workout & Streak Gamification */}
+      <StreakGamificationCard />
 
       {/* AI Health Insights */}
       <AIHealthInsightsCard />
