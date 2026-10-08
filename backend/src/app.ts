@@ -8,6 +8,7 @@ import exportRoutes from './routes/exportRoutes.js';
 import insightRoutes from './routes/insightRoutes.js';
 import streakRoutes from './routes/streakRoutes.js';
 import goalRoutes from './routes/goalRoutes.js';
+import notificationRoutes from './routes/notificationRoutes.js';
 import { errorHandler } from './middleware/errorHandler.js';
 
 dotenv.config();
@@ -39,6 +40,7 @@ app.use('/api/export', exportRoutes);
 app.use('/api/insights', insightRoutes);
 app.use('/api/streak', streakRoutes);
 app.use('/api/goals', goalRoutes);
+app.use('/api/notifications', notificationRoutes);
 
 // Global Error Handler
 app.use(errorHandler);

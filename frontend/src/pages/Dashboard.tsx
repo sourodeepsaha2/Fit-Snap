@@ -7,6 +7,7 @@ import { TodayActivityCard } from '../components/dashboard/TodayActivityCard';
 import { WaterTrackerCard } from '../components/dashboard/WaterTrackerCard';
 import { StreakGamificationCard } from '../components/dashboard/StreakGamificationCard';
 import { FitnessGoalsCard } from '../components/dashboard/FitnessGoalsCard';
+import { SmartNudgeCard } from '../components/dashboard/SmartNudgeCard';
 import { AIHealthInsightsCard } from '../components/dashboard/AIHealthInsightsCard';
 import { WeightSummaryCard } from '../components/dashboard/WeightSummaryCard';
 import { WeeklyCalorieChart } from '../components/dashboard/WeeklyCalorieChart';
@@ -60,6 +61,9 @@ export const Dashboard: React.FC = () => {
           AV
         </div>
       </div>
+
+      {/* Smart Notifications & Reminders Nudge */}
+      <SmartNudgeCard />
 
       {/* Today's Calorie Summary Ring */}
       <CalorieRing
