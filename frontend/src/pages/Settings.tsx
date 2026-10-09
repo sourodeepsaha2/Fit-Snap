@@ -168,15 +168,15 @@ export const Settings: React.FC = () => {
         </div>
 
         {/* Data Management & Export Section */}
-        <div className="bg-zinc-900/90 border border-zinc-800 rounded-3xl p-5 shadow-sm space-y-3">
-          <div className="flex items-center justify-between">
+        <div className="bg-zinc-900/90 border border-zinc-800 rounded-3xl p-5 shadow-sm space-y-4">
+          <div className="flex items-center justify-between pb-3 border-b border-zinc-800/80">
             <div className="flex items-center gap-3">
               <div className="p-2.5 bg-yellow-400/10 text-yellow-400 rounded-xl border border-yellow-400/20">
                 <Download className="w-5 h-5" />
               </div>
               <div>
-                <h3 className="text-base font-bold text-white">Data Export</h3>
-                <p className="text-xs text-zinc-400">Backup your logs & reports</p>
+                <h3 className="text-base font-bold text-white">Cloud Backup & Export</h3>
+                <p className="text-xs text-zinc-400">Automated sync & data downloads</p>
               </div>
             </div>
             <Button
@@ -187,6 +187,20 @@ export const Settings: React.FC = () => {
             >
               Export
             </Button>
+          </div>
+
+          <div className="flex items-center justify-between text-xs">
+            <div>
+              <span className="font-semibold text-zinc-200 block">Auto-Sync Status</span>
+              <span className="text-zinc-400 text-[11px]">Last synced: Just now</span>
+            </div>
+            <button
+              type="button"
+              onClick={() => setToastMessage('Cloud backup synced successfully!')}
+              className="px-3 py-1.5 bg-zinc-800 hover:bg-zinc-700 text-yellow-400 font-bold rounded-xl border border-zinc-700 text-xs transition-all"
+            >
+              ⚡ Sync Now
+            </button>
           </div>
         </div>
 

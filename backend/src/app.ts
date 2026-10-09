@@ -10,6 +10,7 @@ import streakRoutes from './routes/streakRoutes.js';
 import goalRoutes from './routes/goalRoutes.js';
 import notificationRoutes from './routes/notificationRoutes.js';
 import sleepRoutes from './routes/sleepRoutes.js';
+import syncRoutes from './routes/syncRoutes.js';
 import { errorHandler } from './middleware/errorHandler.js';
 
 dotenv.config();
@@ -43,6 +44,7 @@ app.use('/api/streak', streakRoutes);
 app.use('/api/goals', goalRoutes);
 app.use('/api/notifications', notificationRoutes);
 app.use('/api/sleep', sleepRoutes);
+app.use('/api/sync', syncRoutes);
 
 // Global Error Handler
 app.use(errorHandler);
